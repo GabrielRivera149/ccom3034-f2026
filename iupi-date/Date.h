@@ -9,6 +9,7 @@ private:
     std::string alternate;
 public:
     Date();
+    Date(int a, int b, int c);
 };
 
 #endif
