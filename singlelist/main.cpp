@@ -12,5 +12,13 @@ int main() {
   l.push(29);
   l.push(37);
   std::cout << l.pop() << std::endl;
+
+  l.enqueue(31);
+  l.pop();
+  std::cout << l.pop() << std::endl;
+    
+  l.enqueue(8);
+  std::cout << l.pop() << std::endl;
+  
   return 0;
 }
