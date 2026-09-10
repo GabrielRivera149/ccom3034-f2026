@@ -59,10 +59,12 @@ class SLList {
 
   void enqueue(T x) {
     Node *u = new Node(x);
-    if (nullptr == tail) tail = u;
-    if (nullptr == head) head = u;
-    tail->next = u;
-    u->next = nullptr;
+    if (nullptr == head) {	// si la lista esta vacia
+      head = u;			// enlazamos u al principio
+    } else {			// si no
+      tail->next = u;		// enlazamos u al final
+    }
+    u->next = nullptr;		// u es el ultimo
     tail = u;
   }
 
