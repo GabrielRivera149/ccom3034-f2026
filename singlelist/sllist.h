@@ -21,12 +21,13 @@ class SLList {
     }
   };
   Node* head;
+  Node* tail;
 
  public:
 
   // Constructor
   SLList() {
-    head = nullptr;
+    head = tail = nullptr;
   }
 
   ~SLList () {
@@ -37,12 +38,14 @@ class SLList {
       delete w;
     }
     head = nullptr;
+    tail = nullptr;
   }
 
   void push(T x) {
     Node *u = new Node(x);
     u->next = head;
     head = u;
+    if (tail == nullptr) tail = u;
   }
 
   T pop() {
@@ -50,8 +53,22 @@ class SLList {
     T x = u->value;
     head = u->next;
     delete u;
+    if (nullptr == head) tail = nullptr;
     return x;
   }
+
+  void enqueue(T x) {
+    Node *u = new Node(x);
+    if (nullptr == tail) tail = u;
+    if (nullptr == head) head = u;
+    tail->next = u;
+    u->next = nullptr;
+    tail = u;
+  }
+
+  T dequeue() {
+    return pop();
+  }   
 };
 
 #endif
