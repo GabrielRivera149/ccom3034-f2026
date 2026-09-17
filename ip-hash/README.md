@@ -17,5 +17,15 @@ Dame un IP address: 24.50.234.230
 $ ./ip-hash 
 Dame un IP address: 136.145.180.154
 136.145.180.154 tiene hashCode 2291250330 y hash 26814
-
 ```
+
+# Main
+
+The file main.cpp uses hashtable.h to provide a hash table for IP addresses.
+
+HashTable uses any-array.h and sllist.h to build hash tables.
+
+HashTable calls add() and find() as methods of SLList, which are currently unimplemented.
+
+Implement add() and find() in sllist.h so that our hash table implementation works.
+

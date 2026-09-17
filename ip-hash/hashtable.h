@@ -46,13 +46,17 @@ class HashTable {
 
  public:
   
- HashTable() : table(65536) {};
+  HashTable() : table(65536) {
+  };
 
-  ~HashTable() { };
+  ~HashTable() {
+  };
   
   void add(T x) {
-    int j = hash(x);
-    table[j].add(x);
+    if (!find(x)) {
+      int j = hash(x);
+      table[j].add(x);
+    }
   }
 
   bool find(T x) {
